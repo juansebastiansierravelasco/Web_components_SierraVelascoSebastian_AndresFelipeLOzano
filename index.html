@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agenda Cultural</title>
+    <!-- R2 / Conexión del script con defer -->
+    <script src="js/main.js" defer></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9fb;
+            padding: 24px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- R1 / Template propio con estilo y marcadores vacíos -->
+    <template id="event-card-template">
+        <style>
+            .event-card {
+                background: #ffffff;
+                border-left: 5px solid #3498db;
+                border-radius: 6px;
+                padding: 16px;
+                width: 280px;
+                box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+                font-family: inherit;
+            }
+            h3 {
+                color: #2c3e50;
+                margin-top: 0;
+                margin-bottom: 10px;
+            }
+            p {
+                margin: 6px 0;
+                color: #555;
+                font-size: 14px;
+            }
+            .slot-container {
+                margin-top: 12px;
+                padding-top: 8px;
+                border-top: 1px solid #eee;
+                font-size: 13px;
+                color: #7f8c8d;
+            }
+        </style>
+        <div class="event-card">
+            <h3 id="event-title"></h3>
+            <p><strong>Fecha:</strong> <span id="event-date"></span></p>
+            <p><strong>Lugar:</strong> <span id="event-location"></span></p>
+            <div class="slot-container">
+                <!-- R4 / Slot para nota o descripción libre -->
+                <slot>Cupos generales disponibles.</slot>
+            </div>
+        </div>
+    </template>
+
+    <!-- R5 / Reutilización: Al menos 3 instancias con datos distintos -->
+    <event-card titulo="Concierto de Jazz al Aire Libre" fecha="25 de Noviembre, 2026" lugar="Parque Central">
+        <div>Entrada libre y gratuita. Se recomienda llevar manta o silla portátil.</div>
+    </event-card>
+
+    <event-card titulo="Exposición de Arte Moderno" fecha="2 de Diciembre, 2026" lugar="Museo de la Ciudad">
+        <div>Requiere inscripción previa en línea. Quedan pocos lugares.</div>
+    </event-card>
+
+    <event-card titulo="Taller de Cine Independiente" fecha="10 de Diciembre, 2026" lugar="Centro Cultural Municipal">
+        <div>Incluye material de trabajo y certificado de asistencia al finalizar.</div>
+    </event-card>
+
+</body>
+</html>
