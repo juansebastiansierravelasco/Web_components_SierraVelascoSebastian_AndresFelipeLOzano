@@ -2,7 +2,7 @@
 # Actividad evaluativa: Web Components, HTML Templates y Frameworks
 
 * **Integrantes:** Juan Sierra y Andrés Lozano.
-* **Caso elegido (Práctica):** Ficha de mascota para una veterinaria.
+* **Caso elegido (Práctica):** Agenda Cultural.
 
 ## Cómo probar el componente
 
